@@ -6,7 +6,7 @@ The solution provided is a distributed system for facial recognition, that uses 
 ![alt text](https://github.com/herreramaxi/NCIRL-IOT-TABA/blob/main/solution%20architecture.drawio.png "Architecture")
 ### MQTT
 I am using io.adafruit.com as the broker message with following feeds:
-![image](https://user-images.githubusercontent.com/13004153/211152490-313b6209-0015-435a-adbc-3310af4c7ca9.png)
+![image](https://user-images.githubusercontent.com/13004153/211159287-7b44093b-d2ad-4095-9264-33626fff49a9.png)
 
 #### .env file for user credentials
 User credentials are not included on repository, they are loaded from a .env file with following format:
