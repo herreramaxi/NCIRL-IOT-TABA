@@ -3,7 +3,7 @@ import sys
 import time
 from Adafruit_IO import MQTTClient
 from dotenv import load_dotenv
-import os 
+import os
 
 load_dotenv()
 ADAFRUIT_IO_KEY = os.getenv("ADAFRUIT_IO_KEY")
@@ -34,6 +34,13 @@ else:
 def process_message_gate(faceDetected, time):
     print(f"Open the gate {subscriberName} for user {faceDetected} at {time}")
 
+    if faceDetected in ["Thomas A. Anderson (Neo)", "Trinity"]:
+        print(
+            "Good guy from Matrix detected --> call to Tank, operator of the Nebuchadnezzar")
+
+    if faceDetected in ["Garry Kasparov", "Magnus Carlsen", "Hikaru Nakamura"]:
+        print("Grand master detected --> notify to FIDE(International Chess Federation)")
+
 
 def process_message_unknown_faces(faceDetected, time):
     print(f"Unknown face detected on subscriber {subscriberName} at {time}")
@@ -42,6 +49,12 @@ def process_message_unknown_faces(faceDetected, time):
 def process_message_blacklist_faces(faceDetected, time):
     print(
         f"Blacklist face detected, name of user: {faceDetected}, subscriberName: {subscriberName}, date time:{time}")
+
+    if faceDetected in ["Agent Smith", "The Merovingian (The Frenchman)", "Reagan (Cypher)"]:
+        print("Bad guy from Matrix detected --> call to Morpheus")
+
+    if faceDetected in ["Anakin Skywalker"]:
+        print("Bad guy from Star War detected --> call to Obi-Wan Kenobi")
 
 
 def process_message_time_logger(faceDetected, time):
